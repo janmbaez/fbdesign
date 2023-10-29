@@ -12,7 +12,9 @@ struct RegistrationView: View {
     @State private var ConfirmEmail = ""
     @State private var password = ""
     @State private var ConfirmPassword = ""
+    
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         ZStack{
             Color.black
@@ -83,7 +85,10 @@ struct RegistrationView: View {
                 
                 
                 Button{
-                    //
+                    Task{
+                        try await viewModel.createUser(withEmail: email, password: password,
+                        fullname: fullname)
+                    }
                 } label: {
                     Text("Register")
                         .bold()

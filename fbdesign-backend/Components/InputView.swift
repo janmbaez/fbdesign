@@ -10,6 +10,7 @@ import SwiftUI
 struct InputView: View {
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         ZStack{
@@ -52,7 +53,9 @@ struct InputView: View {
                     .foregroundColor(.white)
                 
                 Button{
-                    //
+                    Task{
+                        try await viewModel.signIn(withEmail: email, password: password)
+                    }
                 } label: {
                     Text("Sign in")
                         .bold()
