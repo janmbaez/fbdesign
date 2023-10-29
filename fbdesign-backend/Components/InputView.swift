@@ -10,7 +10,7 @@ import SwiftUI
 struct InputView: View {
     @State private var email = ""
     @State private var password = ""
-    //test
+    
     var body: some View {
         ZStack{
             Color.black
