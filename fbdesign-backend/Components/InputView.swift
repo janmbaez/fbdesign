@@ -22,10 +22,10 @@ struct InputView: View {
                 .offset(y: -350)
             
             VStack(spacing: 20) {
-                Text("Welcome")
+                Text("Bienvenido")
                     .foregroundColor(.white)
                     .font(.system(size: 40, weight: .bold, design: .rounded))
-                    .offset(x: -100, y: -100)
+                    .offset(x: -90, y: -100)
                 
                 TextField("Email", text: $email)
                     .foregroundColor(.white)
@@ -68,7 +68,8 @@ struct InputView: View {
                 
                 
                 NavigationLink {
-                    
+                    RegistrationView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 3){
                         Text("Don't have an account?")

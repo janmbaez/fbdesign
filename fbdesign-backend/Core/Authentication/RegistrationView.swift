@@ -12,6 +12,7 @@ struct RegistrationView: View {
     @State private var ConfirmEmail = ""
     @State private var password = ""
     @State private var ConfirmPassword = ""
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack{
             Color.black
@@ -45,7 +46,7 @@ struct RegistrationView: View {
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
                     .placeholder(when: email.isEmpty) {
-                        Text("Confirme Email")
+                        Text("Confirm Email")
                             .foregroundColor(.white)
                             .bold()
                     }
@@ -78,6 +79,9 @@ struct RegistrationView: View {
                     .frame(width: 350, height: 1)
                     .foregroundColor(.white)
                 
+                
+                
+                
                 Button{
                     //
                 } label: {
@@ -90,8 +94,21 @@ struct RegistrationView: View {
                         Image(systemName: "arrow.right")
                         .foregroundColor(.white)
                 }
-                .padding(.top)
-                .offset(y: 100)
+                
+                
+                Button{
+                    dismiss()
+                } label: {
+                    HStack(spacing: 3){
+                        Text("Already has an account?")
+                            .bold()
+                            .foregroundColor(.white)
+                        Text("Sign in")
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                }
+
             }
             .frame(width: 350)
         }
