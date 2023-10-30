@@ -66,6 +66,8 @@ struct InputView: View {
                         Image(systemName: "arrow.right")
                         .foregroundColor(.white)
                 }
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 .padding(.top)
                 .offset(y: 100)
                 
@@ -92,6 +94,14 @@ struct InputView: View {
     }
 }
  
+extension InputView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+    }
+}
 
 #Preview {
     InputView()
@@ -107,6 +117,6 @@ extension View {
             ZStack(alignment: aligmnet) {
                 placeholder().opacity(shouldShow ? 1 : 0)
                 self
-            }
         }
+    }
 }

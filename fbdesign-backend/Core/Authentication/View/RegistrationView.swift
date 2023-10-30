@@ -12,9 +12,11 @@ struct RegistrationView: View {
     @State private var ConfirmEmail = ""
     @State private var password = ""
     @State private var ConfirmPassword = ""
+    @State private var fullname = ""
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         ZStack{
             Color.black
@@ -32,10 +34,22 @@ struct RegistrationView: View {
                     .offset(x: -60, y: -40)
                 
                 // Email
+                TextField("Fullname", text: $fullname)
+                    .foregroundColor(.white)
+                    .textFieldStyle(.plain)
+                    .placeholders(when: fullname.isEmpty) {
+                        Text("Fullname")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                Rectangle()
+                    .frame(width: 350, height: 1)
+                    .foregroundColor(.white)
+                
                 TextField("Email", text: $email)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
-                    .placeholder(when: email.isEmpty) {
+                    .placeholders(when: email.isEmpty) {
                         Text("Email")
                             .foregroundColor(.white)
                             .bold()
@@ -47,7 +61,7 @@ struct RegistrationView: View {
                 TextField("ConfirmeEmail", text: $ConfirmEmail)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
-                    .placeholder(when: email.isEmpty) {
+                    .placeholders(when: ConfirmEmail.isEmpty) {
                         Text("Confirm Email")
                             .foregroundColor(.white)
                             .bold()
@@ -60,7 +74,7 @@ struct RegistrationView: View {
                 SecureField("Password", text: $password)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
-                    .placeholder(when: password.isEmpty) {
+                    .placeholders(when: password.isEmpty) {
                         Text("Password")
                             .foregroundColor(.white)
                             .bold()
@@ -72,22 +86,39 @@ struct RegistrationView: View {
                 SecureField("Confirm Password", text: $ConfirmPassword)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
-                    .placeholder(when: password.isEmpty) {
+                    .placeholders(when: ConfirmPassword.isEmpty) {
                         Text("Confirm Password")
                             .foregroundColor(.white)
                             .bold()
+                        }
+                if !password.isEmpty && !ConfirmPassword.isEmpty {
+                    if password == ConfirmPassword {
+                        Rectangle()
+                            .frame(width: 350, height: 1)
+                            .foregroundColor(.white)
+                        Image(systemName: "checkmark.circle.fill")
+                            .imageScale(.large)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemGreen))
+                            .offset(x: 150)
+                    } else {
+                        Rectangle()
+                            .frame(width: 350, height: 1)
+                            .foregroundColor(.white)
+                        Image(systemName: "xmark.circle.fill")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .offset(x: 150)
                     }
-                Rectangle()
-                    .frame(width: 350, height: 1)
-                    .foregroundColor(.white)
-                
+                }
                 
                 
                 
                 Button{
                     Task{
-                        try await viewModel.createUser(withEmail: email, password: password,
-                        fullname: fullname)
+                        try await viewModel.createUser(withEmail: email, 
+                                                       password: password, 
+                                                       fullname: fullname)
                     }
                 } label: {
                     Text("Register")
@@ -99,7 +130,8 @@ struct RegistrationView: View {
                         Image(systemName: "arrow.right")
                         .foregroundColor(.white)
                 }
-                
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 
                 Button{
                     dismiss()
@@ -120,11 +152,32 @@ struct RegistrationView: View {
         .ignoresSafeArea()
     }
 }
- 
+
+extension RegistrationView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && ConfirmPassword == password
+        && !fullname.isEmpty
+    }
+}
+
 
 #Preview {
     RegistrationView()
 }
 
-
-
+extension View {
+    func placeholders<Content: View>(
+        when shouldShow: Bool,
+        aligmnet: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+            
+            ZStack(alignment: aligmnet) {
+                placeholder().opacity(shouldShow ? 1 : 0)
+                self
+        }
+    }
+}
