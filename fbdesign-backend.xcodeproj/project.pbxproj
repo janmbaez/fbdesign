@@ -16,6 +16,8 @@
 		BA29D4712AEEE324005C0D61 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA29D4702AEEE324005C0D61 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		BA29D4732AEEE324005C0D61 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = BA29D4722AEEE324005C0D61 /* FirebaseAppCheck */; };
 		BA29D4772AEEE416005C0D61 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29D4762AEEE416005C0D61 /* AuthViewModel.swift */; };
+		BA3248942AF15068007ED37C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3248932AF15068007ED37C /* Product.swift */; };
+		BA3248962AF15355007ED37C /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3248952AF15355007ED37C /* ProductCard.swift */; };
 		BA7DC9E22AEEBD2000E696B9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7DC9E12AEEBD2000E696B9 /* ProfileView.swift */; };
 		BACFD6E62AED81C60023A04D /* fbdesign_backendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFD6E52AED81C60023A04D /* fbdesign_backendApp.swift */; };
 		BACFD6E82AED81C60023A04D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFD6E72AED81C60023A04D /* ContentView.swift */; };
@@ -85,6 +87,8 @@
 		BA29D4632AEEDF09005C0D61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA29D4672AEEE2CD005C0D61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA29D4762AEEE416005C0D61 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		BA3248932AF15068007ED37C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BA3248952AF15355007ED37C /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		BA7DC9E12AEEBD2000E696B9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BACFD6E22AED81C60023A04D /* fbdesign-backend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fbdesign-backend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFD6E52AED81C60023A04D /* fbdesign_backendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbdesign_backendApp.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				BA29D4632AEEDF09005C0D61 /* User.swift */,
+				BA3248932AF15068007ED37C /* Product.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			children = (
 				BACFD6FA2AED83B40023A04D /* InputView.swift */,
 				BA29D4602AEEDBF8005C0D61 /* SettingsRowView.swift */,
+				BA3248952AF15355007ED37C /* ProductCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -423,8 +429,10 @@
 				BA29D4642AEEDF09005C0D61 /* User.swift in Sources */,
 				BA7DC9E22AEEBD2000E696B9 /* ProfileView.swift in Sources */,
 				BACFD6FD2AED9A590023A04D /* RegistrationView.swift in Sources */,
+				BA3248942AF15068007ED37C /* Product.swift in Sources */,
 				BA29D4612AEEDBF9005C0D61 /* SettingsRowView.swift in Sources */,
 				BA29D4772AEEE416005C0D61 /* AuthViewModel.swift in Sources */,
+				BA3248962AF15355007ED37C /* ProductCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fbdesign-backend/Preview Content\"";
+				DEVELOPMENT_TEAM = 7RABXKXCFK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -586,6 +595,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fbdesign-backend/Preview Content\"";
+				DEVELOPMENT_TEAM = 7RABXKXCFK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

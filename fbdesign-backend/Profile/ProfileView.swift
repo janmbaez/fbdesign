@@ -7,12 +7,12 @@
 
 import SwiftUI
 
+// TODO: Fix Profile View(Broken)
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         if let user = viewModel.currentUser {
             Section{
-                HStack{
                     Text(user.initials)
                         .font(.title)
                         .fontWeight(.semibold)
@@ -30,7 +30,6 @@ struct ProfileView: View {
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }
-                }
             }
             
             Section("General"){
@@ -50,17 +49,8 @@ struct ProfileView: View {
                 Button{
                     viewModel.signOut()
                 } label: {
-                    SettingsRowView(imageName: "arrow.left.circle.fill",               title: "Sign Out",
-                                    tintColor: .red)
+                    SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
                 }
-                
-                Button{
-                    print("Sign out..")
-                } label: {
-                    SettingsRowView(imageName: "arrow.left.circle.fill",               title: "Delete Account",
-                                    tintColor: .red)
-                }
-                
             }
         }
     }

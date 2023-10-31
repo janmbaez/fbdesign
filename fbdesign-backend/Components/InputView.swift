@@ -22,6 +22,7 @@ struct InputView: View {
                 .rotationEffect(.degrees(135))
                 .offset(y: -350)
             
+            // TODO: Fix text, before writing, looks blurry
             VStack(spacing: 20) {
                 Text("Bienvenido")
                     .foregroundColor(.white)
