@@ -5,6 +5,8 @@
 //  Created by Jan Baez on 28/10/23.
 //
 
+
+// TODO: Autenticacion con numero telefonico
 import SwiftUI
 
 struct InputView: View {
