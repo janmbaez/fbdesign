@@ -18,7 +18,6 @@
 		BA29D4772AEEE416005C0D61 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29D4762AEEE416005C0D61 /* AuthViewModel.swift */; };
 		BA3248942AF15068007ED37C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3248932AF15068007ED37C /* Product.swift */; };
 		BA3248962AF15355007ED37C /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3248952AF15355007ED37C /* ProductCard.swift */; };
-		BA4D369B2B0F7F8E00E926B6 /* SMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4D369A2B0F7F8E00E926B6 /* SMS.swift */; };
 		BA7DC9E22AEEBD2000E696B9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7DC9E12AEEBD2000E696B9 /* ProfileView.swift */; };
 		BACFD6E62AED81C60023A04D /* fbdesign_backendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFD6E52AED81C60023A04D /* fbdesign_backendApp.swift */; };
 		BACFD6E82AED81C60023A04D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFD6E72AED81C60023A04D /* ContentView.swift */; };
@@ -90,7 +89,6 @@
 		BA29D4762AEEE416005C0D61 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BA3248932AF15068007ED37C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BA3248952AF15355007ED37C /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
-		BA4D369A2B0F7F8E00E926B6 /* SMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMS.swift; sourceTree = "<group>"; };
 		BA7DC9E12AEEBD2000E696B9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BACFD6E22AED81C60023A04D /* fbdesign-backend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fbdesign-backend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFD6E52AED81C60023A04D /* fbdesign_backendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbdesign_backendApp.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 			children = (
 				BACFD6F82AED824D0023A04D /* LoginView.swift */,
 				BACFD6FC2AED9A590023A04D /* RegistrationView.swift */,
-				BA4D369A2B0F7F8E00E926B6 /* SMS.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				BACFD6F92AED824D0023A04D /* LoginView.swift in Sources */,
 				BACFD6FB2AED83B40023A04D /* InputView.swift in Sources */,
 				BACFD6E82AED81C60023A04D /* ContentView.swift in Sources */,
-				BA4D369B2B0F7F8E00E926B6 /* SMS.swift in Sources */,
 				BACFD6E62AED81C60023A04D /* fbdesign_backendApp.swift in Sources */,
 				BA29D4642AEEDF09005C0D61 /* User.swift in Sources */,
 				BA7DC9E22AEEBD2000E696B9 /* ProfileView.swift in Sources */,
